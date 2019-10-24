@@ -7,5 +7,5 @@ class Solution(object):
         min_sum = 0
         nums.sort()
         for i in range(0,len(nums),2):
-            min_sum += nums[i]
+            min_sum += min(nums[i],nums[i+1])#更加保险
         return min_sum
