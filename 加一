@@ -1,0 +1,15 @@
+class Solution(object):
+    def plusOne(self, digits):
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
+        jin = 0
+        digits[-1] += 1
+        for i in range(1, len(digits) + 1):
+            yu = (digits[-i] + jin) % 10
+            jin = (digits[-i] + jin) / 10
+            digits[-i] = yu
+        if jin != 0:
+            digits.insert(0, jin)
+        return digits
